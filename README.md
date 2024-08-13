@@ -1,5 +1,7 @@
 # Welcome to the Transcript Editor web app
 
+![Alt text](src/images/transcript.png)
+
 ## Below are the functionalities I have added
 ### Note: MetaData is hardcoded
 
@@ -8,6 +10,5 @@
 
   ### To see the data go to the utils folder.
   ### To see the code logic go to the components folder.
-![Alt text](src/images/logo.png)
 
 
