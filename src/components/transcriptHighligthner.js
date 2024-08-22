@@ -1,28 +1,30 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { transcriptData } from "../utils/transcriptData";
 
 const TranscriptHiglightner = () => {
 
-    let [timeoutIds, setTimeoutIds] = useState([]);
-    const [currentWordIndex, setCurrentWordIndex] = useState(null);
-    const [filterTranscriptData, setTranscriptData] = useState(transcriptData);
+ const [currentWordIndex, setCurrentWordIndex] = useState(null); // To check the current word index with the index so it can move.
+ const [filterTranscriptData, setTranscriptData] = useState(transcriptData);
 
 
-    useEffect(() => {
-        return () => timeoutIds.forEach(clearTimeout);
-    }, [filterTranscriptData]);
-
-
+    /* on click handler simply for each word set the time then check the CurrentWordIndex with the index  */
     const startBtnHandler = () => {
         filterTranscriptData.forEach((word, index) => {
             const delay = word.start_time;
 
-            const timeoutId = setTimeout(() => {
+            setTimeout(() => {
                 setCurrentWordIndex(index);
+
             }, delay);
-            setTimeoutIds(timeoutId);
         });
     };
+
+    /*
+      - Accepting the Index and updating text
+      - if the updated word is null then return
+          else map over the data and check if the index is equal to the index argument or not
+          if yes then spread all the data and specifically update the word  else show all the items
+    */
 
 
     const editWordHandler = (index, text) => {
