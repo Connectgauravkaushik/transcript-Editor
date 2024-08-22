@@ -4,7 +4,7 @@ import { transcriptData } from "../utils/transcriptData";
 const TranscriptHiglightner = () => {
  
  let [timeoutIds, setTimeoutIds] = useState([]);
- const [currentWordIndex, setCurrentWordIndex] = useState(null); // To check the current word index with the index so it can move.
+ const [currentWordIndex, setCurrentWordIndex] = useState(null);  // To check the current word index with the index so it can move.
  const [filterTranscriptData, setTranscriptData] = useState(transcriptData);
 
     // Not mandatory but wrote to clean up the timer , so that it can start from begining
